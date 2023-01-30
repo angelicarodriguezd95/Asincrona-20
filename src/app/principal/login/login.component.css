@@ -1,0 +1,27 @@
+input.btn.btn-primary{
+    border-radius: 20px;   
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    margin-left: 25%;
+    margin-top: 5rem;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.incorrecto {
+    color: red;
+    text-align: center;
+}
+.incorrecto h4 {
+    margin: 0;
+    padding: 0;
+}
+

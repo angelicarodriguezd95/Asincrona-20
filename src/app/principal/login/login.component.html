@@ -1,0 +1,36 @@
+
+<section class="login-container p-2 w-50  border rounded border shadow-lg">
+    <form [formGroup]="registroform">
+        <div style="text-align:center">
+            <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" 
+                 alt="" width="20%" style="display:block; margin:auto;margin-top: 0.5rem;">
+          </div>  
+        <section class="form-group">
+            <label for="username"></label>
+            <input formControlName="usuario" type="usuario" class="form-control my-3" id="username" placeholder="Usuario" >
+            <section *ngIf="usuario?.invalid && (usuario?.dirty || usuario?.touched)">
+                <section *ngIf="usuario?.errors?.['required']" class="alert alert-success">
+                    Ingrese la usuario "CERTUS"
+                </section>
+            </section>
+        </section>
+        <section class="form-group">
+            <label for="password"></label>
+            <input formControlName="password" minlength="6"  type="password" class="form-control my-3" id="password" placeholder="Contraseña">
+            <section *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                <section *ngIf="password?.errors?.['required']" class="alert alert-success">
+                  Ingrese la contraseña "123456"
+                </section>
+                <section *ngIf="password?.errors?.['minlength']" class="alert alert-success">
+                    Ingrese la contraseña "123456"
+                </section>
+            </section>
+        </section>
+        <section class="boton p-4">
+            <input class="btn btn-primary" [disabled]="registroform.invalid" (click)="login()" value="Iniciar Sesión">
+        </section>
+        <section *ngIf="contrasenaincorrecta" class="incorrecto">
+            <h4>Los Datos son incorrectos</h4>
+        </section>
+    </form>
+</section>
